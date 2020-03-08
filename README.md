@@ -71,6 +71,8 @@ Other references:
 
 [3] H.M. Berman, J. Westbrook, Z. Feng, G. Gilliland, T.N. Bhat, H. Weissig, I.N. Shindyalov, P.E. Bourne. (2000) The Protein Data Bank Nucleic Acids Research, 28: 235-242.
 
+[4] Zhang, H., Zhang, L., Mathews, D.H. and Huang, L., 2019. LinearPartition: Linear-Time Approximation of RNA Folding Partition Function and Base Pairing Probabilities. arXiv preprint arXiv:1912.13190.
+
 Licence
 ====
 Mozilla Public License 2.0
