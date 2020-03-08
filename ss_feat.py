@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import sys
 
-#print(sys.argv[1])
 with open(sys.argv[1] + '.fasta', 'r') as f:
 	seq = pd.read_csv(f, delimiter=None, header=None, delim_whitespace=True, skiprows=[0]).values
 seq = [i for i in seq[0][0]]

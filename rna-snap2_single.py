@@ -2,9 +2,7 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 import os, argparse
-from tqdm import tqdm
 import pickle as pkl
-#from utils import create_tfr_files, prob_to_secondary_structure
 import time
 start = time.time()
 from argparse import RawTextHelpFormatter

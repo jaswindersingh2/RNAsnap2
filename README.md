@@ -5,7 +5,7 @@ SYSTEM REQUIREMENTS
 ====
 Hardware Requirments:
 ----
-SPOT-RNA predictor requires only a standard computer with around 16 GB RAM to support the in-memory operations for RNAs sequence length less than 500.
+RNAsnap2 predictor requires only a standard computer with around 8 GB RAM to support the in-memory operations for RNAs sequence length less than 20,000.
 
 Software Requirments:
 ----
@@ -24,10 +24,8 @@ Installation:
 
 To install SPOT-RNA and it's dependencies following commands can be used in terminal:
 
-1. `git clone https://github.com/jaswindersingh2/SPOT-RNA.git`
-2. `cd SPOT-RNA`
-3. `wget 'https://www.dropbox.com/s/dsrcf460nbjqpxa/SPOT-RNA-models.tar.gz' || wget -O SPOT-RNA-models.tar.gz 'https://app.nihaocloud.com/f/fbf3315a91d542c0bdc2/?dl=1'`
-4. `tar -xvzf SPOT-RNA-models.tar.gz && rm SPOT-RNA-models.tar.gz`
+1. `git clone https://github.com/jaswindersingh2/RNAsnap2.git`
+2. `cd RNAsnap2`
 
 Either follow **virtualenv** column steps or **conda** column steps to create virtual environment and to install SPOT-RNA dependencies given in table below:<br />
 
