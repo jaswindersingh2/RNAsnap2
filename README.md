@@ -27,7 +27,7 @@ To install RNAsnap2 and it's dependencies following commands can be used in term
 1. `git clone https://github.com/jaswindersingh2/RNAsnap2.git`
 2. `cd RNAsnap2`
 
-If you are using RNAsnap2 (SingleSeq) then Step-3 to Step-7 can be skipped as these steps are only required for profile feature generation.
+If using RNAsnap2 (SingleSeq) only then Step-3 to Step-6 can be skipped as these steps are only required for profile feature generation.
 
 3. `wget 'eddylab.org/infernal/infernal-1.1.3-linux-intel-gcc.tar.gz'`
 4. `tar -xvzf infernal-*.tar.gz && rm infernal-*.tar.gz`
@@ -40,10 +40,10 @@ Either follow **virtualenv** column steps or **conda** column steps to create vi
 
 |  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; virtualenv | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conda |
 | :- | :-------- | :--- |
-| 5. | `virtualenv -p python3.6 venv` | `conda create -n venv python=3.6` |
-| 6. | `source ./venv/bin/activate` | `conda activate venv` | 
-| 7. | *To run RNAsnap2 on CPU:*<br /> <br /> `pip install tensorflow==1.14.0` <br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *or* <br /> <br />*To run RNAsnap2 on GPU:*<br /> <br /> `pip install tensorflow-gpu==1.14.0` | *To run RNAsnap2 on CPU:*<br /> <br /> `conda install tensorflow==1.14.0` <br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *or* <br /> <br />*To run RNAsnap2 on GPU:*<br /> <br /> `conda install tensorflow-gpu==1.14.0` |
-| 8. | `pip install -r requirements.txt` | `while read p; do conda install --yes $p; done < requirements.txt` | 
+| 9. | `virtualenv -p python3.6 venv` | `conda create -n venv python=3.6` |
+| 10. | `source ./venv/bin/activate` | `conda activate venv` | 
+| 11. | *To run RNAsnap2 on CPU:*<br /> <br /> `pip install tensorflow==1.14.0` <br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *or* <br /> <br />*To run RNAsnap2 on GPU:*<br /> <br /> `pip install tensorflow-gpu==1.14.0` | *To run RNAsnap2 on CPU:*<br /> <br /> `conda install tensorflow==1.14.0` <br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *or* <br /> <br />*To run RNAsnap2 on GPU:*<br /> <br /> `conda install tensorflow-gpu==1.14.0` |
+| 12. | `pip install -r requirements.txt` | `while read p; do conda install --yes $p; done < requirements.txt` | 
 
 To run the RNAsnap2 (SingleSeq)
 -----
@@ -56,3 +56,27 @@ To run the RNAsnap2
 ```
 ./pred.sh inputs/sample_seq.fasta
 ```
+
+References
+====
+If you use RNAsnap2 for your research please cite the following papers:
+----
+Kumar, A., Singh, J., Paliwal, K., Zhou, Y. Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network.
+
+Other references:
+----
+[1] Sun, S., Wu, Q., Peng, Z. and Yang, J., 2019. Enhanced prediction of RNA solvent accessibility with long short-term memory neural networks and improved sequence profiles. Bioinformatics, 35(10), pp.1686-1691.
+
+[2] Yang, Y., Li, X., Zhao, H., Zhan, J., Wang, J. and Zhou, Y., 2017. Genome-scale characterization of RNA tertiary structures and their functional impact by RNA solvent accessibility prediction. Rna, 23(1), pp.14-22. 
+
+[3] H.M. Berman, J. Westbrook, Z. Feng, G. Gilliland, T.N. Bhat, H. Weissig, I.N. Shindyalov, P.E. Bourne. (2000) The Protein Data Bank Nucleic Acids Research, 28: 235-242.
+
+Licence
+====
+Mozilla Public License 2.0
+
+
+Contact
+====
+jaswinder.singh3@griffithuni.edu.au, yaoqi.zhou@griffith.edu.au
+
