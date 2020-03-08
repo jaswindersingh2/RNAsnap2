@@ -1,8 +1,8 @@
 #!/bin/bash
 
-path_blastn=./blastn/bin
+path_blastn=./ncbi-blast-2.10.0+/bin/blastn
 db_blastn=/mnt/hdd6/jaswinder/Documents/blastn_db/nt
-path_infernal=./infernal/infernal-1.1.3-linux-intel-gcc/binaries
+path_infernal=./infernal-1.1.3-linux-intel-gcc/binaries
 db_inf=/mnt/hdd6/jaswinder/Documents/infernal/nt_database/nt
 
 input=$1
