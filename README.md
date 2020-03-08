@@ -67,7 +67,7 @@ Other references:
 ----
 [1] Sun, S., Wu, Q., Peng, Z. and Yang, J., 2019. Enhanced prediction of RNA solvent accessibility with long short-term memory neural networks and improved sequence profiles. Bioinformatics, 35(10), pp.1686-1691.
 
-[2] Yang, Y., Li, X., Zhao, H., Zhan, J., Wang, J. and Zhou, Y., 2017. Genome-scale characterization of RNA tertiary structures and their functional impact by R{NA} solvent accessibility prediction. Rna, 23(1), pp.14-22. 
+[2] Yang, Y., Li, X., Zhao, H., Zhan, J., Wang, J. and Zhou, Y., 2017. Genome-scale characterization of RNA tertiary structures and their functional impact by RNA solvent accessibility prediction. Rna, 23(1), pp.14-22. 
 
 [3] H.M. Berman, J. Westbrook, Z. Feng, G. Gilliland, T.N. Bhat, H. Weissig, I.N. Shindyalov, P.E. Bourne. (2000) The Protein Data Bank Nucleic Acids Research, 28: 235-242.
 
