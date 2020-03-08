@@ -16,4 +16,4 @@ python3 rna-snap2_single.py --path_input $input_dir --seq_id $seq_id
 end=`date +%s`
 runtime=$((end-start))
 
-echo "computation time = "$runtime
+echo -e "\ncomputation time = "$runtime" seconds"
