@@ -61,7 +61,7 @@ References
 ====
 If you use RNAsnap2 for your research please cite the following papers:
 ----
-Kumar, A., Singh, J., Paliwal, K., Zhou, Y. Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network.
+Kumar, A., Singh, J., Paliwal, K., Zhou, Y., 2020. Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network.
 
 Other references:
 ----
