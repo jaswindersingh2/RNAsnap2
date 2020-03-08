@@ -49,8 +49,8 @@ fi
 ########## run rnasnap2 model ###########
 start=`date +%s`
 python3 rna-snap2.py --path_input $input_dir --seq_id $seq_id
-#python3 rna-snap2_single.py --path_input $input_dir --seq_id $seq_id
-#python3 ensemble.py outputs/$seq_id
+python3 rna-snap2_single.py --path_input $input_dir --seq_id $seq_id
+python3 ensemble.py outputs/$seq_id
 end=`date +%s`
 
 runtime=$((end-start))
