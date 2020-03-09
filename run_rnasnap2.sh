@@ -1,16 +1,17 @@
 #!/bin/bash
 
-path_blastn=./ncbi-blast-2.10.0+/bin/blastn
-db_blastn=/mnt/hdd6/jaswinder/Documents/blastn_db/nt
-path_infernal=./infernal-1.1.3-linux-intel-gcc/binaries
-db_inf=/mnt/hdd6/jaswinder/Documents/infernal/nt_database/nt
-
 input=$1
-
 input_dir=$(dirname $1)
 seq_id=$(basename $(basename $input) .fasta)
 
+path_blastn=./ncbi-blast-2.10.0+/bin/blastn
+db_blastn=$2 #/mnt/hdd6/jaswinder/Documents/blastn_db/nt
+path_infernal=./infernal-1.1.3-linux-intel-gcc/binaries
+db_inf=$3   #/mnt/hdd6/jaswinder/Documents/infernal/nt_database/nt
+
 #echo $input_dir/$seq_id.bla
+
+start=`date +%s`
 
 if [ -f $input_dir/$seq_id.profile ];	then
 	echo "all the features already exists."
@@ -47,12 +48,12 @@ else
 fi
 
 ########## run rnasnap2 model ###########
-start=`date +%s`
 python3 rna-snap2.py --path_input $input_dir --seq_id $seq_id
 python3 rna-snap2_single.py --path_input $input_dir --seq_id $seq_id
 python3 ensemble.py outputs/$seq_id
 end=`date +%s`
 
 runtime=$((end-start))
-echo $runtime
+
+echo -e "\ncomputation time = "$runtime" seconds"
 

@@ -29,10 +29,15 @@ To install RNAsnap2 and it's dependencies following commands can be used in term
 
 If using RNAsnap2 (SingleSeq) only then Step-3 to Step-6 can be skipped as these steps are only required for profile feature generation.
 
+If Infernal tool is not installed in the system, please use follwing 2 command to download and extract it. In case of any problem and issue regarding Infernal download, please refer to [Infernal webpage](http://eddylab.org/infernal/) as following commands only tested on Ubuntu 18.04, 64 bit system.
 3. `wget 'eddylab.org/infernal/infernal-1.1.3-linux-intel-gcc.tar.gz'`
 4. `tar -xvzf infernal-*.tar.gz && rm infernal-*.tar.gz`
+
+If BLASTN tool is not installed in the system, please use follwing 2 command to download and extract it. In case of any problem and issue regarding BLASTN download, please refer to [BLASTN webpage](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) as following commands only tested on Ubuntu 18.04, 64 bit system.
 5. `wget 'ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.10.0+-x64-linux.tar.gz'`
 6. `tar -xvzf ncbi-blast-2.10.0+-x64-linux.tar.gz && rm ncbi-blast-2.10.0+-x64-linux.tar.gz`
+
+The following 2 commands for cloning LinearPartition respository from GITHUB and then making files. In case of any problem and issue, please refer to the [LinearPartition](https://github.com/LinearFold/LinearPartition) repository.
 7. `git clone 'https://github.com/LinearFold/LinearPartition.git'`
 8. `cd LinearPartition/ && make && cd ../`
 
@@ -54,9 +59,9 @@ The output of this command will be the "*.rnasnap2_single" file in the "outputs"
 
 To run the RNAsnap2
 -----
-Before using command below, please edit line 4 and line 6 in "run_rnasnap2.sh" file to provide the path for the reference database (NCBI's nt database) for BLASTN (line 4) and INFERNAL (line 6).
+Before using command below, please download the reference database ([NCBI's nt database](ftp://ftp.ncbi.nlm.nih.gov/blast/db/)) for BLASTN and INFERNAL. In case of any issue, please rerfer to [NCBI's database website](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download).
 ```
-./pred.sh inputs/sample_seq.fasta
+./run_rnasnap2.sh inputs/sample_seq.fasta path_to_blastn_reference_database path_to_infernal_reference_database
 ```
 The output of this command will be the three files "*.rnasnap2_single", "*.rnasnap2_profile", and "*.rnasnap2" in the "outputs" consists of predicted solvent accessibility by RNAsnap2 (SingleSeq), RNAsnap2 (Profile), and RNAsnap2, respectively for a given input RNA sequence.
 
