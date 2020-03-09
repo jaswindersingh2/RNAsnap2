@@ -50,12 +50,15 @@ To run the RNAsnap2 (SingleSeq)
 ```
 ./run_singleseq.sh inputs/sample_seq.fasta
 ```
+The output of this command will be the "*.rnasnap2_single" file in the "outputs" consists of predicted solvent accessibility by RNAsnap2 (SingleSeq) for a given input RNA sequence.
 
 To run the RNAsnap2
 -----
+Before using command below, please edit line 4 and line 6 in "run_rnasnap2.sh" file to provide the path for the reference database (NCBI's nt database) for BLASTN (line 4) and INFERNAL (line 6).
 ```
 ./pred.sh inputs/sample_seq.fasta
 ```
+The output of this command will be the three files "*.rnasnap2_single", "*.rnasnap2_profile", and "*.rnasnap2" in the "outputs" consists of predicted solvent accessibility by RNAsnap2 (SingleSeq), RNAsnap2 (Profile), and RNAsnap2, respectively for a given input RNA sequence.
 
 References
 ====
