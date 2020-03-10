@@ -58,17 +58,17 @@ To run the RNAsnap2 (SingleSeq)
 ```
 ./run_singleseq.sh inputs/sample_seq.fasta
 ```
-The output of this command will be the "*.rnasnap2_single" file in the "outputs" consists of predicted solvent accessibility by RNAsnap2 (SingleSeq) for a given input RNA sequence.
+The output of this command will be the "*.rnasnap2_single" file in the "outputs" folder consists of predicted solvent accessibility by RNAsnap2 (SingleSeq) for a given input RNA sequence.
 
 To run the RNAsnap2
 -----
-Before running RNAsnap2, please download the reference database ([NCBI's nt database](ftp://ftp.ncbi.nlm.nih.gov/blast/db/)) for BLASTN and INFERNAL. Following 2 commands can used for NCBI's nt database. Make sure there is enough space on the system as NCBI's nt database is of size around 270 GB after extraction and it can take couple of hours to download depending on the internet speed. In case of any issue, please rerfer to [NCBI's database website](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download).
+Before running RNAsnap2, please download the reference database ([NCBI's nt database](ftp://ftp.ncbi.nlm.nih.gov/blast/db/)) for BLASTN and INFERNAL. The following command can used for NCBI's nt database. Make sure there is enough space on the system as NCBI's nt database is of size around 270 GB after extraction and it can take couple of hours to download depending on the internet speed. In case of any issue, please rerfer to [NCBI's database website](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download).
 
 ```
 wget -c "ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz -O ./nt_database && gunzip ./nt_database/nt.gz
 ```
 
-This NCBI's database need to formated to use with BLASTN. To format the NCBI's database, the following command can be used used. Please make sure system have enough space as formated database is of size around 120 GB and it can few hours for it.
+This NCBI's database need to formated to use with BLASTN. To format the NCBI's database, the following command can be used. Please make sure system have enough space as formated database is of size around 120 GB and it can few hours for it.
 ```
 ./ncbi-blast-2.10.0+/bin/makeblastdb -in ./nt_database -dbtype nucl
 ```
@@ -77,7 +77,7 @@ To run the RNAsnap2, the following command can be used.
 ```
 ./run_rnasnap2.sh inputs/sample_seq.fasta
 ```
-The output of this command will be the three files "*.rnasnap2_single", "*.rnasnap2_profile", and "*.rnasnap2" in the "outputs" consists of predicted solvent accessibility by RNAsnap2 (SingleSeq), RNAsnap2 (Profile), and RNAsnap2, respectively for a given input RNA sequence.
+The output of this command will be the "*.rnasnap2_profile" file in the "outputs" folder consists of predicted solvent accessibility by RNAsnap2 for a given input RNA sequence.
 
 References
 ====
