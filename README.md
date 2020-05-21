@@ -79,8 +79,10 @@ To run the RNAsnap2, the following command can be used.
 ```
 The output of this command will be the "*.rnasnap2_profile" file in the "outputs" folder consists of predicted solvent accessibility by RNAsnap2 for a given input RNA sequence.
 
-Datasets Used For Training, Validation, and Testing
+Datasets
 ====
+
+The following datasets were used for Training, Validation, and Testing of RNAsnap2:
 [Dropbox](https://www.dropbox.com/s/fl1upqsvd7rpyrl/RNAsnap2_data.zip)
 
 References
