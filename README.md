@@ -82,7 +82,8 @@ The output of this command will be the "*.rnasnap2_profile" file in the "outputs
 Datasets
 ====
 
-The following datasets were used for Training, Validation, and Testing of RNAsnap2:
+The following dataset was used for Training, Validation, and Testing of RNAsnap2:
+
 [Dropbox](https://www.dropbox.com/s/fl1upqsvd7rpyrl/RNAsnap2_data.zip)
 
 References
