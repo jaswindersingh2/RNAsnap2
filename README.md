@@ -84,7 +84,7 @@ Datasets
 
 The following dataset was used for Training, Validation, and Testing of RNAsnap2:
 
-[Dropbox](https://www.dropbox.com/s/fl1upqsvd7rpyrl/RNAsnap2_data.zip)
+[Dropbox](https://www.dropbox.com/s/fl1upqsvd7rpyrl/RNAsnap2_data.zip) or [Nihao Cloud](https://app.nihaocloud.com/f/afea8e005a964bf8bb0f/)
 
 References
 ====
