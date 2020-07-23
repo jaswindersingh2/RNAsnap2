@@ -1,11 +1,26 @@
 # RNAsnap2
 Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network.
 
-SYSTEM REQUIREMENTS
+Introduction:
+----
+RNA solvent accessibility, similar to protein solvent accessibility, reflects the structural regions that are accessible to solvents or other functional biomolecules, and plays an important role for structural and functional characterization. Unlike protein solvent accessibility, only a few tools are available for predicting RNA solvent accessibility despite the fact that millions of RNA transcripts have unknown structures and functions. Also, these tools have limited accuracy. Here, we have developed RNAsnap2 that employs a dilated convolutional neural network (Figure 1) with a new feature, based on predicted base-pairing probabilities from LinearPartition[4].
+
+|![](./RNAsnap2_architecture.png)
+|----|
+| <p align="center"> <b>Figure 1:</b> The network architecture of RNAsnap2. The residual block is shown within dashed red line. k, d, DF , and BIN are the size of
+filter, dropout rate, dilation factor, and batch instance normalization, respectively, and L is the length of the input RNA. Scalar 10 and 64 represent the number of features per nucleotide and the number filters in each convolutional layer, respectively.|
+
+Using the same training set from the recent predictor RNAsol[1], RNAsnap2 provides an 11% improvement in median Pearson’s Correlation Coefficient (PCC) and 9% improvement in mean absolute errors for the same test set of 45 RNA chains (TS45 in Figure 2). A larger improvement (22% in median PCC) is observed for 31 newly deposited RNA chains (TS31 in Figure 2) that are non-redundant and independent from the training and the test sets. A single-sequence version of RNAsnap2 (i.e. without using sequence profiles generated from homology search by Infernal) has achieved comparable performance to the profile-based RNAsol[1]. In addition, RNAsnap2 has achieved comparable performance for protein-bound and protein-free RNAs. Both RNAsnap2 and RNAsnap2 (SingleSeq) are expected to be useful for searching structural signatures and locating functional regions of non-coding RNAs.
+
+|![](./benchmark_results.png)
+|----|
+| <p align="center"> <b>Figure 2:</b> Distribution of PCC score for individual RNA chains on test sets TS45, TS45 ∗ , and TS31. On each box, the central mark indicates the median, and the bottom and top edges of the box indicate the 25th and 75th percentiles, respectively. The outliers are plotted individually by using the “+” symbol.|
+
+SYSTEM REQUIREMENTS TO RUN
 ====
 Hardware Requirments:
 ----
-RNAsnap2 predictor requires only a standard computer with around 8 GB RAM to support the in-memory operations for RNAs sequence length less than 20,000.
+RNAsnap2 predictor requires only a standard computer with around 32 GB RAM to support the in-memory operations for RNAs sequence length less than 500 for RNAsnap2 and 2,000 for RNAsnap2 (SingleSeq).
 
 Software Requirments:
 ----
