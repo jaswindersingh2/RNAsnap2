@@ -36,8 +36,8 @@ If Infernal tool is not installed in the system, please use follwing 2 command t
 
 If BLASTN tool is not installed in the system, please use follwing 2 command to download and extract it. In case of any problem and issue regarding BLASTN download, please refer to [BLASTN webpage](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) as following commands only tested on Ubuntu 18.04, 64 bit system.
 
-5. `wget 'ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.10.0+-x64-linux.tar.gz'`
-6. `tar -xvzf ncbi-blast-2.10.0+-x64-linux.tar.gz && rm ncbi-blast-2.10.0+-x64-linux.tar.gz`
+5. `wget 'ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-*+-x64-linux.tar.gz'`
+6. `tar -xvzf ncbi-blast-*+-x64-linux.tar.gz && rm ncbi-blast-*+-x64-linux.tar.gz`
 
 The following 2 commands for cloning LinearPartition respository from GITHUB and then making files. In case of any problem and issue, please refer to the [LinearPartition](https://github.com/LinearFold/LinearPartition) repository.
 
@@ -65,12 +65,12 @@ To run the RNAsnap2
 Before running RNAsnap2, please download the reference database ([NCBI's nt database](ftp://ftp.ncbi.nlm.nih.gov/blast/db/)) for BLASTN and INFERNAL. The following command can used for NCBI's nt database. Make sure there is enough space on the system as NCBI's nt database is of size around 270 GB after extraction and it can take couple of hours to download depending on the internet speed. In case of any issue, please rerfer to [NCBI's database website](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download).
 
 ```
-wget -c "ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz -O ./nt_database && gunzip ./nt_database/nt.gz
+wget -c "ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz -O ./nt_database/nt.gz && gunzip ./nt_database/nt.gz
 ```
 
 This NCBI's database need to formated to use with BLASTN. To format the NCBI's database, the following command can be used. Please make sure system have enough space as formated database is of size around 120 GB and it can few hours for it.
 ```
-./ncbi-blast-2.10.0+/bin/makeblastdb -in ./nt_database -dbtype nucl
+./ncbi-blast-2.10.0+/bin/makeblastdb -in ./nt_database/nt -dbtype nucl
 ```
 
 To run the RNAsnap2, the following command can be used.
@@ -90,7 +90,7 @@ References
 ====
 If you use RNAsnap2 for your research please cite the following papers:
 ----
-Kumar, A., Singh, J., Paliwal, K., Singh, J., Zhou, Y., 2020. Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network. (Under review)
+Kumar, A., Singh, J., Paliwal, K., Singh, J., Zhou, Y., 2020. Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network. Bioinformatics (in press)
 
 Other references:
 ----
@@ -100,7 +100,7 @@ Other references:
 
 [3] H.M. Berman, J. Westbrook, Z. Feng, G. Gilliland, T.N. Bhat, H. Weissig, I.N. Shindyalov, P.E. Bourne. (2000) The Protein Data Bank Nucleic Acids Research, 28: 235-242.
 
-[4] Zhang, H., Zhang, L., Mathews, D.H. and Huang, L., 2019. LinearPartition: Linear-Time Approximation of RNA Folding Partition Function and Base Pairing Probabilities. arXiv preprint arXiv:1912.13190.
+[4] Zhang, H., Zhang, L., Mathews, D.H. and Huang, L., 2020. LinearPartition: linear-time approximation of RNA folding partition function and base-pairing probabilities. Bioinformatics, 36(Supplement_1), pp.i258-i267.
 
 Licence
 ====
