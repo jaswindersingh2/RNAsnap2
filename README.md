@@ -7,8 +7,7 @@ RNA solvent accessibility, similar to protein solvent accessibility, reflects th
 
 |![](./RNAsnap2_architecture.png)
 |----|
-| <p align="center"> <b>Figure 1:</b> The network architecture of RNAsnap2. The residual block is shown within dashed red line. k, d, DF , and BIN are the size of
-filter, dropout rate, dilation factor, and batch instance normalization, respectively, and L is the length of the input RNA. Scalar 10 and 64 represent the number of features per nucleotide and the number filters in each convolutional layer, respectively.|
+| <p align="center"> <b>Figure 1:</b> The network architecture of RNAsnap2. The residual block is shown within dashed red line. k, d, DF , and BIN are the size of filter, dropout rate, dilation factor, and batch instance normalization, respectively, and L is the length of the input RNA. Scalar 10 and 64 represent the number of features per nucleotide and the number filters in each convolutional layer, respectively.|
 
 Using the same training set from the recent predictor RNAsol[1], RNAsnap2 provides an 11% improvement in median Pearson’s Correlation Coefficient (PCC) and 9% improvement in mean absolute errors for the same test set of 45 RNA chains (TS45 in Figure 2). A larger improvement (22% in median PCC) is observed for 31 newly deposited RNA chains (TS31 in Figure 2) that are non-redundant and independent from the training and the test sets. A single-sequence version of RNAsnap2 (i.e. without using sequence profiles generated from homology search by Infernal) has achieved comparable performance to the profile-based RNAsol[1]. In addition, RNAsnap2 has achieved comparable performance for protein-bound and protein-free RNAs. Both RNAsnap2 and RNAsnap2 (SingleSeq) are expected to be useful for searching structural signatures and locating functional regions of non-coding RNAs.
 
