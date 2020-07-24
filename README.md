@@ -54,12 +54,12 @@ To install RNAsnap2 and it's dependencies following commands can be used in term
 
 If using RNAsnap2 (SingleSeq) only then Step-3 to Step-6 can be skipped as these steps are only required for profile feature generation.
 
-If Infernal tool is not installed in the system, please use follwing 2 command to download and extract it. In case of any problem and issue regarding Infernal download, please refer to [Infernal webpage](http://eddylab.org/infernal/) as following commands only tested on Ubuntu 18.04, 64 bit system.
+If Infernal tool is not installed in the system, please use follwing 2 command to download it otherwise provide absolute path to binary files of Infernal in line-13 of **run_rnasnap2.sh** file. In case of any problem and issue regarding Infernal download, please refer to [Infernal webpage](http://eddylab.org/infernal/) as following commands only tested on Ubuntu 18.04, 64 bit system.
 
 3. `wget 'eddylab.org/infernal/infernal-1.1.3-linux-intel-gcc.tar.gz'`
 4. `tar -xvzf infernal-*.tar.gz && rm infernal-*.tar.gz`
 
-If BLASTN tool is not installed in the system, please use follwing 2 command to download and extract it. In case of any problem and issue regarding BLASTN download, please refer to [BLASTN webpage](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) as following commands only tested on Ubuntu 18.04, 64 bit system.
+If BLASTN tool is not installed in the system, please use follwing 2 command to download otherwise provide absolute path to binary files of BLAST-N in line-11 of **run_rnasnap2.sh** file. In case of any problem and issue regarding BLASTN download, please refer to [BLASTN webpage](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) as following commands only tested on Ubuntu 18.04, 64 bit system.
 
 5. `wget 'ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-*+-x64-linux.tar.gz'`
 6. `tar -xvzf ncbi-blast-*+-x64-linux.tar.gz && rm ncbi-blast-*+-x64-linux.tar.gz`
@@ -86,11 +86,11 @@ Usage
 ```
 ./run_singleseq.sh inputs/sample_seq.fasta
 ```
-The output of this command will be the "*.rnasnap2_single" file in the "outputs" folder consists of predicted solvent accessibility by RNAsnap2 (SingleSeq) for a given input RNA sequence.
+The output of this command will be the *sample_seq.rnasnap2_single* file in the *outputs/* folder consists of predicted solvent accessibility by RNAsnap2 (SingleSeq) for a given input RNA sequence. To verify the output, the predicted ASA *sample_seq.rnasnap2_single* for *sample_seq.fasta* should be same as in existing *6ol3_C.rnasnap2_single* as both sequences are same.
 
 **To run the RNAsnap2**
 
-Before running RNAsnap2, please download the reference database ([NCBI's nt database](ftp://ftp.ncbi.nlm.nih.gov/blast/db/)) for BLASTN and INFERNAL. The following command can used for NCBI's nt database. Make sure there is enough space on the system as NCBI's nt database is of size around 270 GB after extraction and it can take couple of hours to download depending on the internet speed. In case of any issue, please rerfer to [NCBI's database website](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download).
+Before running RNAsnap2, please download the reference database ([NCBI's nt database](ftp://ftp.ncbi.nlm.nih.gov/blast/db/)) for BLASTN and INFERNAL. If referecne database already exists then provide absolute path to folder contains **nt** database file for Infernal in line-14 of **run_rnasnap2.sh** file and absolute path to folder contains formatted **nt.--.nhr/nin/nsq** database files for BLAST-N in line-12 of **run_rnasnap2.sh** file. Otherwise, the following command can used for NCBI's nt database download. Make sure there is enough space on the system as NCBI's nt database is of size around 270 GB after extraction and it can take couple of hours to download depending on the internet speed. In case of any issue, please rerfer to [NCBI's database website](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download).
 
 ```
 wget -c "ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz -O ./nt_database/nt.gz && gunzip ./nt_database/nt.gz
@@ -105,7 +105,7 @@ To run the RNAsnap2, the following command can be used.
 ```
 ./run_rnasnap2.sh inputs/sample_seq.fasta
 ```
-The output of this command will be the "*.rnasnap2_profile" file in the "outputs" folder consists of predicted solvent accessibility by RNAsnap2 for a given input RNA sequence.
+The output of this command will be the *sample_seq.rnasnap2_profile* file in the *outputs/* folder consists of predicted solvent accessibility by RNAsnap2  for a given input RNA sequence. To verify the output, the predicted ASA *sample_seq.rnasnap2_profile* for *sample_seq.fasta* should be almost (may be updated nt database used) same as in existing *6ol3_C.rnasnap2_profile* as both sequences are same.
 
 Datasets
 ----
