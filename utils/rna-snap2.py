@@ -18,15 +18,17 @@ args = parser.parse_args()
 norm_mu = [0.24231204, 0.18269396, 0.32596249, 0.24903151, 0.22588943, 0.14617564, 0.29558719, 0.20700315, 0.31261292]
 norm_std = [0.42848211, 0.38641542, 0.46873334, 0.4324521,  0.61212416, 0.61543625, 0.63496662, 0.63862874, 0.41229352]
 
-with open(args.path_input + '/' + args.seq_id + '.fasta') as file:
+with open(args.seq_id) as file:
     input_data = [line.strip() for line in file.read().splitlines() if line.strip()]
 
-with open(args.path_input + '/' + args.seq_id + '.profile', 'r') as f:
+with open(args.seq_id.split('.')[0] + '.profile', 'r') as f:
 	profile = pd.read_csv(f, delimiter='\t', header=None, usecols=[0,1,2,3,4,5,6,7,8,9]).values
 
 count = int(len(input_data)/2)
 
-ids = [input_data[2*i].replace(">", "") for i in range(count)]
+#ids = [input_data[2*i].replace(">", "") for i in range(count)]
+ids = [args.seq_id.split('/')[-1]]
+
 sequences = {}
 for i,I in enumerate(ids):
     sequences[I] = input_data[2*i+1].replace(" ", "").replace("T", "U")
@@ -93,4 +95,4 @@ for id in ids:
 
     temp = np.vstack((np.char.mod('%d', col1), col2, np.char.mod('%d', col3))).T
 
-    np.savetxt(os.path.join(args.outputs, str(id))+'.rnasnap2_profile', (temp), delimiter='\t\t', fmt="%s", header='#\t' + str(id) + '\t' + 'RNAsnap-2' + '\n', comments='')
+    np.savetxt(os.path.join(args.outputs, str(id.split('.')[0]))+'.rnasnap2_profile', (temp), delimiter='\t\t', fmt="%s", header='#\t' + str(id) + '\t' + 'RNAsnap-2' + '\n', comments='')

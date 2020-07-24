@@ -3,8 +3,9 @@ use strict;
 
 my $dir=$ARGV[0];
 my $id=$ARGV[1];
+my $input=$ARGV[2];
 
-	my @seq=`cat $dir/$id.fasta`;chomp(@seq);
+	my @seq=`cat $input`;chomp(@seq);
 	my @seq1=split(//,$seq[1]);chomp(@seq1);
 	my @pssm=`cat $dir/$id.pssm`;chomp(@pssm);
 	my $stru=`cat $dir/$id.stru`;chomp($stru);

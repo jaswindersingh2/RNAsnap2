@@ -8,7 +8,6 @@ start = time.time()
 from argparse import RawTextHelpFormatter
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--path_input', default='inputs', type=str, help='Path to input file in fasta format; default = ''inputs/sample_seq.fasta''\n', metavar='')
 parser.add_argument('--seq_id',default='', type=str, help='name of input sequence')
 parser.add_argument('--batch_size',default=1, type=str, help='number of sequences predicts simultaneously')
 parser.add_argument('--outputs',default='./outputs', type=str, help='Path to output files; default = ''outputs/\n', metavar='')
@@ -18,12 +17,14 @@ args = parser.parse_args()
 norm_mu = [0.24231204, 0.18269396, 0.32596249, 0.24903151, 0.31261292]
 norm_std = [0.42848211, 0.38641542, 0.46873334, 0.4324521, 0.41229352]
 
-with open(args.path_input + '/' + args.seq_id + '.fasta') as file:
+with open(args.seq_id) as file:
     input_data = [line.strip() for line in file.read().splitlines() if line.strip()]
 
 count = int(len(input_data)/2)
 
-ids = [input_data[2*i].replace(">", "") for i in range(count)]
+#ids = [input_data[2*i].replace(">", "") for i in range(count)]
+ids = [args.seq_id.split('/')[-1]]
+
 sequences = {}
 for i,I in enumerate(ids):
     sequences[I] = input_data[2*i+1].replace(" ", "").replace("T", "U")
@@ -34,7 +35,7 @@ bases = np.array([base for base in BASES])
 feat_dic = {}
 for i,I in enumerate(ids):
 	feat_onehot = np.concatenate([[(bases==base.upper()).astype(int)] if str(base).upper() in BASES else np.array([[0]*len(BASES)]) for base in sequences[I]])
-	with open('inputs/' + I + '.prob', 'r') as f:
+	with open('inputs/' + I.split('.')[0] + '.prob', 'r') as f:
 		prob = pd.read_csv(f, delimiter=None, delim_whitespace=True, header=None, skiprows=[0]).values
 	bp_prob =  np.zeros((len(sequences[I]), len(sequences[I])))
 	for i in prob:
@@ -99,4 +100,4 @@ for id in ids:
 
     temp = np.vstack((np.char.mod('%d', col1), col2, np.char.mod('%d', col3))).T
 
-    np.savetxt(os.path.join(args.outputs, str(id))+'.rnasnap2_single', (temp), delimiter='\t\t', fmt="%s", header='#\t' + str(id) + '\t' + 'RNAsnap-2' + '\n', comments='')
+    np.savetxt(os.path.join(args.outputs, str(id.split('.')[0]))+'.rnasnap2_single', (temp), delimiter='\t\t', fmt="%s", header='#\t' + str(id) + '\t' + 'RNAsnap-2' + '\n', comments='')

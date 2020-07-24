@@ -1,7 +1,20 @@
-# RNAsnap2
-Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network.
+RNAsnap2: *Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network.*
+====
 
-Introduction:
+Contents
+----
+  * [Introduction](#introduction-)
+  * [Results](#results-)
+  * [Current networks](#current-networks)
+  * [System Requirments](#system-requirments)
+  * [Installation](#installation)
+  * [Usage](#Usage)
+  * [Datasets](#datasets)
+  * [Citation guide](#citation-guide)
+  * [Licence](#licence)
+  * [Contact](#contact)
+
+Introduction
 ----
 RNA solvent accessibility, similar to protein solvent accessibility, reflects the structural regions that are accessible to solvents or other functional biomolecules, and plays an important role for structural and functional characterization. Unlike protein solvent accessibility, only a few tools are available for predicting RNA solvent accessibility despite the fact that millions of RNA transcripts have unknown structures and functions. Also, these tools have limited accuracy. Here, we have developed RNAsnap2 that employs a dilated convolutional neural network (Figure 1) with a new feature, based on predicted base-pairing probabilities from LinearPartition[4].
 
@@ -9,20 +22,21 @@ RNA solvent accessibility, similar to protein solvent accessibility, reflects th
 |----|
 | <p align="center"> <b>Figure 1:</b> The network architecture of RNAsnap2. The residual block is shown within dashed red line. k, d, DF , and BIN are the size of filter, dropout rate, dilation factor, and batch instance normalization, respectively, and L is the length of the input RNA. Scalar 10 and 64 represent the number of features per nucleotide and the number filters in each convolutional layer, respectively.|
 
-Using the same training set from the recent predictor RNAsol[1], RNAsnap2 provides an 11% improvement in median Pearson’s Correlation Coefficient (PCC) and 9% improvement in mean absolute errors for the same test set of 45 RNA chains (TS45 in Figure 2). A larger improvement (22% in median PCC) is observed for 31 newly deposited RNA chains (TS31 in Figure 2) that are non-redundant and independent from the training and the test sets. A single-sequence version of RNAsnap2 (i.e. without using sequence profiles generated from homology search by Infernal) has achieved comparable performance to the profile-based RNAsol[1]. In addition, RNAsnap2 has achieved comparable performance for protein-bound and protein-free RNAs. Both RNAsnap2 and RNAsnap2 (SingleSeq) are expected to be useful for searching structural signatures and locating functional regions of non-coding RNAs.
+Results
+----
+Using the same training set from the recent predictor RNAsol[1], RNAsnap2 provides an 11% improvement in median Pearson’s Correlation Coefficient (PCC) and 9% improvement in mean absolute errors for the same test set of 45 RNA chains (TS45 in Figure 2). A larger improvement (22% in median PCC) is observed for 31 newly deposited RNA chains (TS31 in Figure 2) that are non-redundant and independent from the training and the test sets. A single-sequence version of RNAsnap2 (i.e. without using sequence profiles generated from homology search by Infernal) has achieved comparable performance to the profile-based RNAsol[1].
 
 |![](./benchmark_results.png)
 |----|
 | <p align="center"> <b>Figure 2:</b> Distribution of PCC score for individual RNA chains on test sets TS45, TS45 ∗ , and TS31. On each box, the central mark indicates the median, and the bottom and top edges of the box indicate the 25th and 75th percentiles, respectively. The outliers are plotted individually by using the “+” symbol.|
 
-SYSTEM REQUIREMENTS TO RUN
-====
-Hardware Requirments:
+System Requirments
 ----
+
+**Hardware Requirments:**
 RNAsnap2 predictor requires only a standard computer with around 32 GB RAM to support the in-memory operations for RNAs sequence length less than 500 for RNAsnap2 and 2,000 for RNAsnap2 (SingleSeq).
 
-Software Requirments:
-----
+**Software Requirments:**
 * [Python3](https://docs.python-guide.org/starting/install3/linux/)
 * [virtualenv](https://virtualenv.pypa.io/en/latest/installation/) or [Anaconda](https://anaconda.org/anaconda/virtualenv)
 * [CUDA 10.0](https://developer.nvidia.com/cuda-10.0-download-archive) (Optional If using GPU)
@@ -30,10 +44,8 @@ Software Requirments:
 
 RNAsnap2 has been tested on Ubuntu 14.04, 16.04, and 18.04 operating systems.
 
-USAGE
-====
 
-Installation:
+Installation
 ----
 
 To install RNAsnap2 and it's dependencies following commands can be used in terminal:
@@ -67,15 +79,18 @@ Either follow **virtualenv** column steps or **conda** column steps to create vi
 | 11. | *To run RNAsnap2 on CPU:*<br /> <br /> `pip install tensorflow==1.14.0` <br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *or* <br /> <br />*To run RNAsnap2 on GPU:*<br /> <br /> `pip install tensorflow-gpu==1.14.0` | *To run RNAsnap2 on CPU:*<br /> <br /> `conda install tensorflow==1.14.0` <br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *or* <br /> <br />*To run RNAsnap2 on GPU:*<br /> <br /> `conda install tensorflow-gpu==1.14.0` |
 | 12. | `pip install -r requirements.txt` | `while read p; do conda install --yes $p; done < requirements.txt` | 
 
-To run the RNAsnap2 (SingleSeq)
------
+Usage
+----
+
+**To run the RNAsnap2 (SingleSeq)**
+
 ```
 ./run_singleseq.sh inputs/sample_seq.fasta
 ```
 The output of this command will be the "*.rnasnap2_single" file in the "outputs" folder consists of predicted solvent accessibility by RNAsnap2 (SingleSeq) for a given input RNA sequence.
 
-To run the RNAsnap2
------
+**To run the RNAsnap2**
+
 Before running RNAsnap2, please download the reference database ([NCBI's nt database](ftp://ftp.ncbi.nlm.nih.gov/blast/db/)) for BLASTN and INFERNAL. The following command can used for NCBI's nt database. Make sure there is enough space on the system as NCBI's nt database is of size around 270 GB after extraction and it can take couple of hours to download depending on the internet speed. In case of any issue, please rerfer to [NCBI's database website](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download).
 
 ```
@@ -94,20 +109,19 @@ To run the RNAsnap2, the following command can be used.
 The output of this command will be the "*.rnasnap2_profile" file in the "outputs" folder consists of predicted solvent accessibility by RNAsnap2 for a given input RNA sequence.
 
 Datasets
-====
+----
 
 The following dataset was used for Training, Validation, and Testing of RNAsnap2:
 
 [Dropbox](https://www.dropbox.com/s/fl1upqsvd7rpyrl/RNAsnap2_data.zip) or [Nihao Cloud](https://app.nihaocloud.com/f/afea8e005a964bf8bb0f/)
 
-References
-====
-If you use RNAsnap2 for your research please cite the following papers:
+Citation guide
 ----
+
+**If you use RNAsnap2 for your research please cite the following papers:**
 Kumar, A., Singh, J., Paliwal, K., Singh, J., Zhou, Y., 2020. Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network. Bioinformatics (in press)
 
-Other references:
-----
+**If you use RNAsnap2 data sets and/or input feature pipeline, please consider citing the following papers:**
 [1] Sun, S., Wu, Q., Peng, Z. and Yang, J., 2019. Enhanced prediction of RNA solvent accessibility with long short-term memory neural networks and improved sequence profiles. Bioinformatics, 35(10), pp.1686-1691.
 
 [2] Yang, Y., Li, X., Zhao, H., Zhan, J., Wang, J. and Zhou, Y., 2017. Genome-scale characterization of RNA tertiary structures and their functional impact by RNA solvent accessibility prediction. Rna, 23(1), pp.14-22. 
@@ -117,11 +131,11 @@ Other references:
 [4] Zhang, H., Zhang, L., Mathews, D.H. and Huang, L., 2020. LinearPartition: linear-time approximation of RNA folding partition function and base-pairing probabilities. Bioinformatics, 36(Supplement_1), pp.i258-i267.
 
 Licence
-====
+----
 Mozilla Public License 2.0
 
 
 Contact
-====
+----
 jaswinder.singh3@griffithuni.edu.au, yaoqi.zhou@griffith.edu.au
 
