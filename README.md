@@ -5,7 +5,6 @@ Contents
 ----
   * [Introduction](#introduction-)
   * [Results](#results-)
-  * [Current networks](#current-networks)
   * [System Requirments](#system-requirments)
   * [Installation](#installation)
   * [Usage](#Usage)
@@ -119,9 +118,11 @@ Citation guide
 ----
 
 **If you use RNAsnap2 for your research please cite the following papers:**
+
 Kumar, A., Singh, J., Paliwal, K., Singh, J., Zhou, Y., 2020. Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network. Bioinformatics (in press)
 
 **If you use RNAsnap2 data sets and/or input feature pipeline, please consider citing the following papers:**
+
 [1] Sun, S., Wu, Q., Peng, Z. and Yang, J., 2019. Enhanced prediction of RNA solvent accessibility with long short-term memory neural networks and improved sequence profiles. Bioinformatics, 35(10), pp.1686-1691.
 
 [2] Yang, Y., Li, X., Zhao, H., Zhan, J., Wang, J. and Zhou, Y., 2017. Genome-scale characterization of RNA tertiary structures and their functional impact by RNA solvent accessibility prediction. Rna, 23(1), pp.14-22. 
