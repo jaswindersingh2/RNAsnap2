@@ -86,7 +86,7 @@ Usage
 ```
 ./run_singleseq.sh inputs/sample_seq.fasta
 ```
-The output of this command will be the **sample_seq.rnasnap2_single** file in the **./outputs/** folder consists of predicted solvent accessibility by **RNAsnap2 (SingleSeq)** for a given input RNA sequence. To verify the output, the predicted ASA **sample_seq.rnasnap2_single** for *sample_seq.fasta* should be same as in existing **6ol3_C.rnasnap2_single** as both sequences are same.
+The output of this command will be the **sample_seq.rnasnap2_single** file in the **./outputs/** folder consists of predicted solvent accessibility by **RNAsnap2 (SingleSeq)** for a given input RNA sequence. To verify the output, the predicted ASA **sample_seq.rnasnap2_single** for **sample_seq.fasta** should be same as in existing **6ol3_C.rnasnap2_single** as both sequences are same.
 
 **To run the RNAsnap2**
 
