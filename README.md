@@ -3,8 +3,8 @@ RNAsnap2: *Single-sequence and Profile-based Prediction of RNA Solvent Accessibi
 
 Contents
 ----
-  * [Introduction](#introduction-)
-  * [Results](#results-)
+  * [Introduction](#introduction)
+  * [Results](#results)
   * [System Requirments](#system-requirments)
   * [Installation](#installation)
   * [Usage](#Usage)
