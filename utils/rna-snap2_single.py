@@ -35,7 +35,7 @@ bases = np.array([base for base in BASES])
 feat_dic = {}
 for i,I in enumerate(ids):
 	feat_onehot = np.concatenate([[(bases==base.upper()).astype(int)] if str(base).upper() in BASES else np.array([[0]*len(BASES)]) for base in sequences[I]])
-	with open('inputs/' + I.split('.')[0] + '.prob', 'r') as f:
+	with open(os.path.join('/'.join(args.seq_id.split('/')[0:-1]), I.split('.')[0] + '.prob'), 'r') as f:
 		prob = pd.read_csv(f, delimiter=None, delim_whitespace=True, header=None, skiprows=[0]).values
 	bp_prob =  np.zeros((len(sequences[I]), len(sequences[I])))
 	for i in prob:

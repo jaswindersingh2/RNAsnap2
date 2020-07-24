@@ -1,7 +1,7 @@
 #!/bin/bash
 
-input=$1
-input_dir=$(dirname $1)
+input="$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
+input_dir=$(dirname $input)
 seq_id=$(basename $(basename $input) | cut -d. -f1)
 
 #################### convert multiline fasta to one line fasta #####################
