@@ -119,7 +119,7 @@ Citation guide
 
 **If you use RNAsnap2 for your research please cite the following papers:**
 
-Kumar, A., Singh, J., Paliwal, K., Singh, J., Zhou, Y., 2020. Single-sequence and Profile-based Prediction of RNA Solvent Accessibility Using Dilated Convolution Neural Network. Bioinformatics (in press)
+Kumar, A., Singh, J., Paliwal, K., Singh, J., Zhou, Y., 2020. Single-sequence and profile-based prediction of RNA solvent accessibility using dilated convolutional neural network, Bioinformatics, btaa652, [https://doi.org/10.1093/bioinformatics/btaa652](https://doi.org/10.1093/bioinformatics/btaa652)
 
 **If you use RNAsnap2 data sets and/or input feature pipeline, please consider citing the following papers:**
 
