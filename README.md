@@ -56,7 +56,7 @@ If using RNAsnap2 (SingleSeq) only then Step-3 to Step-6 can be skipped as these
 
 If Infernal tool is not installed in the system, please use follwing 2 command to download it otherwise provide absolute path to binary files of Infernal in line-13 of **run_rnasnap2.sh** file. In case of any problem and issue regarding Infernal download, please refer to [Infernal webpage](http://eddylab.org/infernal/) as following commands only tested on Ubuntu 18.04, 64 bit system.
 
-3. `wget 'eddylab.org/infernal/infernal-*-linux-intel-gcc.tar.gz'`
+3. `wget 'eddylab.org/infernal/infernal-1.1.3-linux-intel-gcc.tar.gz'`
 4. `tar -xvzf infernal-*.tar.gz && rm infernal-*.tar.gz`
 
 If BLASTN tool is not installed in the system, please use follwing 2 command to download otherwise provide absolute path to binary files of BLAST-N in line-11 of **run_rnasnap2.sh** file. In case of any problem and issue regarding BLASTN download, please refer to [BLASTN webpage](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) as following commands only tested on Ubuntu 18.04, 64 bit system.
