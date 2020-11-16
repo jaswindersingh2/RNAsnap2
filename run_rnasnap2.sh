@@ -8,9 +8,9 @@ seq_id=$(basename $(basename $input) | cut -d. -f1)
 awk -i inplace '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' $input
 sed -i '/^$/d' $input
 
-path_blastn=./ncbi-blast-2.10.0+/bin
+path_blastn=./ncbi-blast-*+/bin
 path_blastn_database=./nt_database/nt
-path_infernal=./infernal-1.1.3-linux-intel-gcc/binaries
+path_infernal=./infernal-*-linux-intel-gcc/binaries
 path_infernal_database=./nt_database/nt
 
 start=`date +%s`
