@@ -9,7 +9,7 @@ Contents
   * [Installation](#installation)
   * [Usage](#Usage)
   * [Datasets](#datasets)
-  * [Reproduce Results](#reproduce results)
+  * [Reproduce-results](#reproduce-results)
   * [Citation guide](#citation-guide)
   * [Licence](#licence)
   * [Contact](#contact)
@@ -115,7 +115,7 @@ The following dataset was used for Training, Validation, and Testing of RNAsnap2
 
 [Dropbox](https://www.dropbox.com/s/are962cst1plhzn/RNAsnap2_data.zip) or [Nihao Cloud](https://app.nihaocloud.com/f/afea8e005a964bf8bb0f/)
 
-Reproduce Results
+Reproduce-results
 ----
 To reproduce results for two testsets (TS45 and TS31) mentioned in the RNAsnap2 paper:
 
