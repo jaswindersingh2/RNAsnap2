@@ -9,6 +9,7 @@ Contents
   * [Installation](#installation)
   * [Usage](#Usage)
   * [Datasets](#datasets)
+  * [Reproduce Results](#reproduce results)
   * [Citation guide](#citation-guide)
   * [Licence](#licence)
   * [Contact](#contact)
@@ -113,6 +114,31 @@ Datasets
 The following dataset was used for Training, Validation, and Testing of RNAsnap2:
 
 [Dropbox](https://www.dropbox.com/s/are962cst1plhzn/RNAsnap2_data.zip) or [Nihao Cloud](https://app.nihaocloud.com/f/afea8e005a964bf8bb0f/)
+
+Reproduce Results
+----
+To reproduce results for two testsets (TS45 and TS31) mentioned in the RNAsnap2 paper:
+
+1. `cd benchmarking`
+2. `python evaluate_pcc.py`
+
+```
+RNAsnap2:
+TS45 Mean PCC = 0.535
+TS31 Mean PCC = 0.511
+
+RNAsnap2_single:
+TS45 Mean PCC = 0.496
+TS31 Mean PCC = 0.484
+
+RNAsol:
+TS45 Mean PCC = 0.492
+TS31 Mean PCC = 0.416
+
+RNAsnap:
+TS45 Mean PCC = 0.489
+TS31 Mean PCC = 0.249
+```
 
 Citation guide
 ----
